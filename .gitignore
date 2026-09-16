@@ -1,0 +1,15 @@
+/.env
+/database/*.sqlite
+/database/*.sqlite-shm
+/database/*.sqlite-wal
+/node_modules/
+/storage/logs/*.log
+/.phpunit.cache/
+/.codex-prd-media/
+/.codex-prd-render-word/
+# Agent and documentation files
+/implementation_plan.md
+/implementation.md
+/task.md
+/walkthrough.md
+/docs/GITHUB_TWO_DAY_CONTRIBUTION_PLAN.md
