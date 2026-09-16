@@ -20,6 +20,7 @@ ob_end_clean();
 
 use Safe360\Core\Csrf;
 use Safe360\Core\Database;
+use Safe360\Services\HealthService;
 use Safe360\Services\ReportingService;
 use Safe360\Services\TrainingService;
 
@@ -37,6 +38,8 @@ $check = static function (bool $condition, string $message) use (&$passed, &$fai
 };
 
 $db = Database::connection();
+$health = (new HealthService())->snapshot();
+$check($health['status'] === 'ok' && $health['database']['missing_tables'] === [], 'Health check confirms the seeded database schema is complete.');
 $check((int) $db->query('SELECT COUNT(*) FROM scenes')->fetchColumn() === 6, 'Seed contains six PRD scenes.');
 $check((int) $db->query('SELECT COUNT(*) FROM hazards WHERE is_assessed = 1')->fetchColumn() === 36, 'Seed contains 36 assessed hazards.');
 $check((int) $db->query('SELECT COUNT(*) FROM questions')->fetchColumn() === 37, 'Every hazard, including tutorial practice, has a question.');
@@ -101,4 +104,3 @@ $check(true, 'A zero-hazard-found path can exit a scene without trapping the tra
 
 echo "\n{$passed} passed, {$failed} failed.\n";
 exit($failed === 0 ? 0 : 1);
-
