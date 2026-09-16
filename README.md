@@ -49,6 +49,7 @@ Only `public/` should be configured as the web root. Production must use HTTPS, 
 - [Requirements traceability](docs/REQUIREMENTS_TRACEABILITY.md)
 - [Test report](docs/TEST_REPORT.md)
 - [Demonstration script](docs/DEMO_SCRIPT.md)
+- [Deployment runbook](docs/DEPLOYMENT_RUNBOOK.md)
 - [Panorama provenance](docs/content-validation/PANORAMA_PROVENANCE.md)
 - [Security and release checklist](docs/SECURITY.md)
 
