@@ -1,0 +1,16 @@
+{
+  "name": "safe360-warehouse-hazard-training",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Safe360 warehouse hazard perception training system",
+  "scripts": {
+    "assets": "node scripts/copy-assets.mjs"
+  },
+  "dependencies": {
+    "@popperjs/core": "^2.11.8",
+    "bootstrap": "^5.3.8",
+    "chart.js": "^4.5.0",
+    "marzipano": "^0.10.2"
+  }
+}
+
